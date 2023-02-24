@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class EmergencyContact extends StatelessWidget {
   //TODO: create emergencyContact object w/ fields firstName, lastName, profilePic?
+  //TODO: emergency contact tracks location?
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
