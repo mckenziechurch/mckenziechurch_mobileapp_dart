@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatelessWidget {
+  //TODO: create user object w/ fields firstName, lastName, profilePic?
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -64,6 +65,7 @@ class ProfilePage extends StatelessWidget {
           radius: 25,
           child: CircleAvatar(
             radius: 23,
+            //TODO: replace w/ user photo
             backgroundImage: NetworkImage('images/profile_pic_default.jpg')
           )
         ),

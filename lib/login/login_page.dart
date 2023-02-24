@@ -52,7 +52,7 @@ class LoginPage extends StatelessWidget {
             const SizedBox(height: 16),
             ElevatedButton(
               onPressed: () {
-                // go to main screen (home page)
+                // go to login confirmation page
                 //TODO: ADD NAVIGATION
               },
               child: const Text('I am finished'),
