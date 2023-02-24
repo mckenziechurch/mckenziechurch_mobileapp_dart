@@ -13,22 +13,62 @@ class ProfilePage extends StatelessWidget {
             const Text(
               'Fill in your information',
               style: TextStyle(fontSize: 30),
+              textAlign: TextAlign.center,
             ),
             const SizedBox(height: 16),
+            const Text(
+              'First Name',
+              style: TextStyle(fontSize: 20),
+            ),
+            const SizedBox(height: 8),
             const TextField(
-              textAlign: TextAlign.center,
               decoration: InputDecoration(
-                hintText: 'Enter your first name',
+                hintText: 'Type first name here',
+                border: OutlineInputBorder(
+                  borderRadius: 
+                  BorderRadius.all(Radius.circular(10.0) 
+                  )
+                ),
               ),
+              textAlign: TextAlign.center
+            ),
+            const SizedBox(height:10),
+            const Text(
+              'Last Name',
+              style: TextStyle(fontSize: 20),
             ),
             const SizedBox(height: 8),
             const TextField(
               textAlign: TextAlign.center,
               decoration: InputDecoration(
-                hintText: 'Enter your last name',
-              ),
+                hintText: 'Type last name here',
+                border: OutlineInputBorder(
+                  borderRadius: 
+                  BorderRadius.all(Radius.circular(10.0) 
+                  )
+                ),
+              )
             ),
-            const SizedBox(height: 8),
+            const SizedBox(height: 16),
+            Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: const <Widget>[
+        Padding(
+          padding: const EdgeInsets.fromLTRB(20, 20, 20, 7),
+          child: Text(
+            'Add a photo of yourself',
+            style: TextStyle(fontSize: 20.0),
+          ),
+        ),
+        CircleAvatar(
+          radius: 25,
+          child: CircleAvatar(
+            radius: 23,
+            backgroundImage: NetworkImage('images/profile_pic_default.jpg')
+          )
+        ),
+      ],
+      ),
             const SizedBox(height: 16),
             ElevatedButton(
               onPressed: () {
