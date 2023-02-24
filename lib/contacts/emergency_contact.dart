@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CreateContacts extends StatelessWidget {
-  //TODO: create contact object w/ fields firstName, lastName, profilePic?
+class EmergencyContact extends StatelessWidget {
+  //TODO: create emergencyContact object w/ fields firstName, lastName, profilePic?
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -12,7 +12,7 @@ class CreateContacts extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'Fill in information for the contact',
+              'Fill in information for your emergency contact',
               style: TextStyle(fontSize: 30),
               textAlign: TextAlign.center,
             ),
@@ -77,20 +77,6 @@ class CreateContacts extends StatelessWidget {
             children: <Widget>[
               Expanded(
                 child: 
-                ElevatedButton(
-                  onPressed: () {
-                    //TODO: add more contact fields
-                  },
-                  child: 
-                    const Text("Add another contact"),
-                    style: 
-                    ElevatedButton.styleFrom(
-                      padding: const EdgeInsets.fromLTRB(10, 10, 10, 10)
-                    ),
-                  )
-                  ),
-              Expanded(
-                child: 
                 OutlinedButton(
                   onPressed: () {
                     //TODO: clear the fields
@@ -105,7 +91,7 @@ class CreateContacts extends StatelessWidget {
             const SizedBox(height: 16),
             ElevatedButton(
               onPressed: () {
-                // Handle button press - takes to home_page
+                // Handle button press - takes to add_contacts_option
                 //TODO: ADD NAVIGATION
               },
               child: const Text('I am finished'),
@@ -114,7 +100,7 @@ class CreateContacts extends StatelessWidget {
             OutlinedButton(
               onPressed: () {
                  //TODO: ADD NAVIGATION
-                 // go to add_contacts_option
+                 // go to profile_creation
               }, 
               child: const Text('Back'))
           ],
