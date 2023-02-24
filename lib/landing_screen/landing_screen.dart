@@ -25,6 +25,7 @@ class LandingPage extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 // Handle button 1 press
+                 //TODO: ADD NAVIGATION
               },
               child: const Text('Login'),
             ),
@@ -32,6 +33,7 @@ class LandingPage extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 // Handle button 2 press
+                 //TODO: ADD NAVIGATION
               },
               child: const Text('Signup'),
             ),
