@@ -20,7 +20,7 @@ class EmergencyContact extends StatelessWidget {
             const SizedBox(height: 16),
             const Text(
               'Name',
-              style: TextStyle(fontSize: 20),
+              style: TextStyle(fontSize: 30),
             ),
             const SizedBox(height: 8),
             const TextField(
@@ -37,7 +37,7 @@ class EmergencyContact extends StatelessWidget {
             const SizedBox(height: 16),
             const Text(
               'Phone Number',
-              style: TextStyle(fontSize: 20),
+              style: TextStyle(fontSize: 30),
             ),
             const SizedBox(height: 8),
             const TextField(
@@ -59,7 +59,7 @@ class EmergencyContact extends StatelessWidget {
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 7),
           child: Text(
             'Add a photo of your contact',
-            style: TextStyle(fontSize: 20.0),
+            style: TextStyle(fontSize: 30.0),
           ),
         ),
         CircleAvatar(
@@ -90,20 +90,26 @@ class EmergencyContact extends StatelessWidget {
           )
         ),
             const SizedBox(height: 16),
-            ElevatedButton(
+            SizedBox(
+              width: 500,
+            child: ElevatedButton(
               onPressed: () {
                 // Handle button press - takes to add_contacts_option
                 //TODO: ADD NAVIGATION
               },
               child: const Text('I am finished'),
+            )
             ),
             const SizedBox(height: 16),
-            OutlinedButton(
+            SizedBox(
+              width: 500,
+            child: OutlinedButton(
               onPressed: () {
-                 //TODO: ADD NAVIGATION
-                 // go to profile_creation
+                 //TODO: ADD NAVIGATION - go to profile_creation
               }, 
-              child: const Text('Back'))
+              child: const Text('Back')
+              )
+            )
           ],
         ),
       ),

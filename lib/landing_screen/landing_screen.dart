@@ -1,45 +1,73 @@
 import 'package:flutter/material.dart';
 
-
 class LandingPage extends StatelessWidget {
+  //TODO: create contact object w/ fields firstName, lastName, profilePic?
   @override
   Widget build(BuildContext context) {
-    return MaterialApp( 
-      home: Center(
+    return MaterialApp(
+      home: Scaffold(
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
               'Personoo',
-              style: TextStyle(fontSize: 40),
-            ),
-            Scaffold(
-              body: Container(
-                child: const CircleAvatar(
-                  radius: 50.0,
-                  backgroundImage: AssetImage('images/bear-icon.webp')
-                )
-              )
-            ),
-            const SizedBox(height: 32),
-            ElevatedButton(
-              onPressed: () {
-                // takes to login page
-                 //TODO: ADD NAVIGATION
-              },
-              child: const Text('Login'),
+              style: TextStyle(fontSize: 50),
+              textAlign: TextAlign.center,
             ),
             const SizedBox(height: 16),
-            ElevatedButton(
+            Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: const <Widget>[
+        Padding(
+          padding: const EdgeInsets.fromLTRB(20, 20, 20, 7),
+        child: CircleAvatar(
+          radius: 25,
+          child: CircleAvatar(
+            radius: 23,
+            backgroundImage: NetworkImage('images/pbear-icon.webp')
+          )
+        )
+        )
+      ],
+      ),
+             const SizedBox(height: 16),
+             SizedBox(
+              width: 700,
+            child: ElevatedButton(
               onPressed: () {
-                // takes to profile creation
-                 //TODO: ADD NAVIGATION
+                // Handle button press - takes to login_page
+                //TODO: ADD NAVIGATION
               },
-              child: const Text('Signup'),
-            ),
+              child: const Text('I already have an account'),
+            )
+              ),
+              const SizedBox(height: 16),
+             SizedBox(
+              width: 700,
+            child: ElevatedButton(
+              onPressed: () {
+                // Handle button press - takes to profile_creation
+                //TODO: ADD NAVIGATION
+              },
+              child: const Text('Create an account'),
+            )
+              ),
+              const SizedBox(height: 16),
+            SizedBox(
+              width: 500,
+            child: OutlinedButton(
+              onPressed: () {
+                 //TODO: ADD NAVIGATION - exits the app
+              }, 
+              child: const Text('Quit')
+              )
+            )
           ],
         ),
       ),
+      )
     );
   }
 }

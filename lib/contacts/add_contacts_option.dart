@@ -12,24 +12,31 @@ class AddContacts extends StatelessWidget {
           children: <Widget>[
             const Text(
               'Would you like to add contacts for message sending?',
-              style: TextStyle(fontSize: 30),
+              style: TextStyle(fontSize: 50),
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 16),
-            ElevatedButton(
+            SizedBox(
+              width: 500,
+            child: ElevatedButton(
               onPressed: () {
                 //go to create contacts page
                 //TODO: ADD NAVIGATION
               },
               child: const Text('Yes'),
+            )
             ),
             const SizedBox(height: 16),
-            OutlinedButton(
+            SizedBox(
+              width: 500,
+            child: OutlinedButton(
               onPressed: () {
                 // go to main page
                  //TODO: ADD NAVIGATION
               }, 
-              child: const Text('No'))
+              child: const Text('No')
+              )
+            )
           ],
         ),
       ),
