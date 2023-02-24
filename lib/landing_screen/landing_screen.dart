@@ -24,7 +24,7 @@ class LandingPage extends StatelessWidget {
             const SizedBox(height: 32),
             ElevatedButton(
               onPressed: () {
-                // Handle button 1 press
+                // takes to login page
                  //TODO: ADD NAVIGATION
               },
               child: const Text('Login'),
@@ -32,7 +32,7 @@ class LandingPage extends StatelessWidget {
             const SizedBox(height: 16),
             ElevatedButton(
               onPressed: () {
-                // Handle button 2 press
+                // takes to profile creation
                  //TODO: ADD NAVIGATION
               },
               child: const Text('Signup'),

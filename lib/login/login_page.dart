@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class ProfilePage extends StatelessWidget {
+class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -11,7 +11,7 @@ class ProfilePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'Fill in your information',
+              'Login',
               style: TextStyle(fontSize: 30),
               textAlign: TextAlign.center,
             ),
@@ -50,29 +50,9 @@ class ProfilePage extends StatelessWidget {
               )
             ),
             const SizedBox(height: 16),
-            Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: const <Widget>[
-        Padding(
-          padding: const EdgeInsets.fromLTRB(20, 20, 20, 7),
-          child: Text(
-            'Add a photo of yourself',
-            style: TextStyle(fontSize: 20.0),
-          ),
-        ),
-        CircleAvatar(
-          radius: 25,
-          child: CircleAvatar(
-            radius: 23,
-            backgroundImage: NetworkImage('images/profile_pic_default.jpg')
-          )
-        ),
-      ],
-      ),
-            const SizedBox(height: 16),
             ElevatedButton(
               onPressed: () {
-                // Handle button press - takes to add_contacts_option
+                // go to main screen (home page)
                 //TODO: ADD NAVIGATION
               },
               child: const Text('I am finished'),
@@ -81,9 +61,9 @@ class ProfilePage extends StatelessWidget {
             OutlinedButton(
               onPressed: () {
                  //TODO: ADD NAVIGATION
-                 // exits the application
+                 // go back to landing page
               }, 
-              child: const Text('Quit'))
+              child: const Text('Back'))
           ],
         ),
       ),
