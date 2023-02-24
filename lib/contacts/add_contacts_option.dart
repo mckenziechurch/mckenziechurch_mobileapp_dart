@@ -18,7 +18,7 @@ class AddContacts extends StatelessWidget {
             const SizedBox(height: 16),
             ElevatedButton(
               onPressed: () {
-                // Handle button press
+                //go to create contacts page
                 //TODO: ADD NAVIGATION
               },
               child: const Text('Yes'),
@@ -26,6 +26,7 @@ class AddContacts extends StatelessWidget {
             const SizedBox(height: 16),
             OutlinedButton(
               onPressed: () {
+                // go to main page
                  //TODO: ADD NAVIGATION
               }, 
               child: const Text('No'))

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ConfirmLogin extends StatelessWidget {
+  //TODO: access user object fields
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

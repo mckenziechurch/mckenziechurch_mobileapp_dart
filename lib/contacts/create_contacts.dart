@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ProfilePage extends StatelessWidget {
-  //TODO: create user object w/ fields firstName, lastName, profilePic?
+class CreateContacts extends StatelessWidget {
+  //TODO: create contact object w/ fields firstName, lastName, profilePic?
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -12,19 +12,19 @@ class ProfilePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'Fill in your information',
+              'Fill in information for the contact',
               style: TextStyle(fontSize: 30),
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 16),
             const Text(
-              'First Name',
+              'Name',
               style: TextStyle(fontSize: 20),
             ),
             const SizedBox(height: 8),
             const TextField(
               decoration: InputDecoration(
-                hintText: 'Type first name here',
+                hintText: 'Type their name here',
                 border: OutlineInputBorder(
                   borderRadius: 
                   BorderRadius.all(Radius.circular(10.0) 
@@ -33,48 +33,31 @@ class ProfilePage extends StatelessWidget {
               ),
               textAlign: TextAlign.center
             ),
-            const SizedBox(height:10),
-            const Text(
-              'Last Name',
-              style: TextStyle(fontSize: 20),
-            ),
-            const SizedBox(height: 8),
-            const TextField(
-              textAlign: TextAlign.center,
-              decoration: InputDecoration(
-                hintText: 'Type last name here',
-                border: OutlineInputBorder(
-                  borderRadius: 
-                  BorderRadius.all(Radius.circular(10.0) 
-                  )
-                ),
-              )
-            ),
-            const SizedBox(height:10),
+            const SizedBox(height: 16),
             const Text(
               'Phone Number',
               style: TextStyle(fontSize: 20),
             ),
             const SizedBox(height: 8),
             const TextField(
-              textAlign: TextAlign.center,
               decoration: InputDecoration(
-                hintText: 'Type phone number here',
+                hintText: 'Type their phone number here',
                 border: OutlineInputBorder(
                   borderRadius: 
                   BorderRadius.all(Radius.circular(10.0) 
                   )
                 ),
-              )
+              ),
+              textAlign: TextAlign.center
             ),
             const SizedBox(height: 16),
             Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: const <Widget>[
         Padding(
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 7),
           child: Text(
-            'Add a photo of yourself',
+            'Add a photo of your contact',
             style: TextStyle(fontSize: 20.0),
           ),
         ),
@@ -88,6 +71,37 @@ class ProfilePage extends StatelessWidget {
         ),
       ],
       ),
+      const SizedBox(height: 16),
+      ListTile(
+          title: Row(
+            children: <Widget>[
+              Expanded(
+                child: 
+                ElevatedButton(
+                  onPressed: () {
+                    //TODO: add more contact fields
+                  },
+                  child: 
+                    const Text("Add another contact"),
+                    style: 
+                    ElevatedButton.styleFrom(
+                      padding: const EdgeInsets.fromLTRB(10, 10, 10, 10)
+                    ),
+                  )
+                  ),
+              Expanded(
+                child: 
+                OutlinedButton(
+                  onPressed: () {
+                    //TODO: clear the fields
+                  },
+                  child: 
+                    const Text("Remove contact")
+                  )
+                  ),
+            ],
+          )
+        ),
             const SizedBox(height: 16),
             ElevatedButton(
               onPressed: () {
