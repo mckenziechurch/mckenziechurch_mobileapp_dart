@@ -40,7 +40,9 @@ class LandingPage extends StatelessWidget {
                 // Handle button press - takes to login_page
                 //TODO: ADD NAVIGATION
               },
-              child: const Text('I already have an account'),
+              child: const Text('I already have an account',
+              semanticsLabel: 'I already have an account'
+              ),
             )
               ),
               const SizedBox(height: 16),
@@ -51,7 +53,9 @@ class LandingPage extends StatelessWidget {
                 // Handle button press - takes to profile_creation
                 //TODO: ADD NAVIGATION
               },
-              child: const Text('Create an account'),
+              child: const Text('Create an account',
+              semanticsLabel: 'Create an account'
+              ),
             )
               ),
               const SizedBox(height: 16),
@@ -61,7 +65,9 @@ class LandingPage extends StatelessWidget {
               onPressed: () {
                  //TODO: ADD NAVIGATION - exits the app
               }, 
-              child: const Text('Quit')
+              child: const Text('Quit',
+              semanticsLabel: 'Quit'
+              )
               )
             )
           ],

@@ -212,7 +212,9 @@ class ConfirmLogin extends StatelessWidget {
               onPressed: () {
                  //TODO: ADD NAVIGATION - popup ("would you like to exit the app?")
               }, 
-              child: const Text('Quit')
+              child: const Text('Quit',
+              semanticsLabel: 'Quit'
+              )
               )
             )
           ],

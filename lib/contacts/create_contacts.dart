@@ -15,6 +15,7 @@ class CreateContacts extends StatelessWidget {
               'Fill in information for the contact',
               style: TextStyle(fontSize: 30),
               textAlign: TextAlign.center,
+              semanticsLabel: 'Fill in information for the contact'
             ),
             const SizedBox(height: 16),
             const Text(
@@ -25,6 +26,7 @@ class CreateContacts extends StatelessWidget {
             const TextField(
               decoration: InputDecoration(
                 hintText: 'Type their name here',
+                semanticCounterText: 'Type their name here',
                 border: OutlineInputBorder(
                   borderRadius: 
                   BorderRadius.all(Radius.circular(10.0) 
@@ -36,12 +38,14 @@ class CreateContacts extends StatelessWidget {
             const SizedBox(height: 16),
             const Text(
               'Phone Number',
+              semanticsLabel: 'Phone Number',
               style: TextStyle(fontSize: 30),
             ),
             const SizedBox(height: 8),
             const TextField(
               decoration: InputDecoration(
                 hintText: 'Type their phone number here',
+                semanticCounterText: 'Type their phone number here',
                 border: OutlineInputBorder(
                   borderRadius: 
                   BorderRadius.all(Radius.circular(10.0) 
@@ -58,6 +62,7 @@ class CreateContacts extends StatelessWidget {
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 7),
           child: Text(
             'Add a photo of your contact',
+            semanticsLabel: 'Add a photo of your contact',
             style: TextStyle(fontSize: 30.0),
           ),
         ),
@@ -82,7 +87,9 @@ class CreateContacts extends StatelessWidget {
                     //TODO: add more contact fields
                   },
                   child: 
-                    const Text("Add another contact"),
+                    const Text("Add another contact",
+                    semanticsLabel: 'Add another contact'
+                    ),
                     style: 
                     ElevatedButton.styleFrom(
                       padding: const EdgeInsets.fromLTRB(10, 10, 10, 10)
@@ -96,7 +103,9 @@ class CreateContacts extends StatelessWidget {
                     //TODO: clear the fields
                   },
                   child: 
-                    const Text("Remove contact")
+                    const Text("Remove contact",
+                    semanticsLabel: 'Remove contact'
+                    )
                   )
                   ),
             ],
@@ -110,7 +119,9 @@ class CreateContacts extends StatelessWidget {
                 // Handle button press - takes to home_page
                 //TODO: ADD NAVIGATION
               },
-              child: const Text('I am finished'),
+              child: const Text('I am finished',
+              semanticsLabel: 'I am finished'
+              ),
             )
             ),
             const SizedBox(height: 16),
@@ -120,7 +131,9 @@ class CreateContacts extends StatelessWidget {
               onPressed: () {
                  //TODO: ADD NAVIGATION - go to add_contacts_option
               }, 
-              child: const Text('Back')
+              child: const Text('Back',
+              semanticsLabel: 'Back'
+              )
               )
             )
           ],

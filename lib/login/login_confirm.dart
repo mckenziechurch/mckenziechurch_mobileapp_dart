@@ -13,12 +13,14 @@ class ConfirmLogin extends StatelessWidget {
           children: <Widget>[
             const Text(
               'Is this you?',
+              semanticsLabel: 'Is this you?',
               style: TextStyle(fontSize: 30),
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 16),
             const Text(
               'Name: [Full Name]',
+              semanticsLabel: 'Name: [Full Name]',
               style: TextStyle(fontSize: 20),
             ),
             const SizedBox(height: 16),
@@ -44,7 +46,9 @@ class ConfirmLogin extends StatelessWidget {
                 // Handle button press - takes to add_contacts_option
                 //TODO: ADD NAVIGATION
               },
-              child: const Text('Yes'),
+              child: const Text('Yes',
+              semanticsLabel: 'Yes'
+              ),
             ),
             const SizedBox(height: 16),
             OutlinedButton(
@@ -52,7 +56,9 @@ class ConfirmLogin extends StatelessWidget {
                  //TODO: ADD NAVIGATION
                  // exits the application
               }, 
-              child: const Text('No')
+              child: const Text('No',
+              semanticsLabel: 'No'
+              )
               )
           ],
         ),

@@ -12,18 +12,21 @@ class LoginPage extends StatelessWidget {
           children: <Widget>[
             const Text(
               'Login',
+              semanticsLabel: 'Login',
               style: TextStyle(fontSize: 30),
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 16),
             const Text(
               'First Name',
+              semanticsLabel: 'First Name',
               style: TextStyle(fontSize: 20),
             ),
             const SizedBox(height: 8),
             const TextField(
               decoration: InputDecoration(
                 hintText: 'Type first name here',
+                semanticCounterText: 'Type first name here',
                 border: OutlineInputBorder(
                   borderRadius: 
                   BorderRadius.all(Radius.circular(10.0) 
@@ -35,6 +38,7 @@ class LoginPage extends StatelessWidget {
             const SizedBox(height:10),
             const Text(
               'Last Name',
+              semanticsLabel: 'Last Name',
               style: TextStyle(fontSize: 20),
             ),
             const SizedBox(height: 8),
@@ -42,6 +46,7 @@ class LoginPage extends StatelessWidget {
               textAlign: TextAlign.center,
               decoration: InputDecoration(
                 hintText: 'Type last name here',
+                semanticCounterText: 'Type last name here',
                 border: OutlineInputBorder(
                   borderRadius: 
                   BorderRadius.all(Radius.circular(10.0) 
@@ -55,7 +60,9 @@ class LoginPage extends StatelessWidget {
                 // go to login confirmation page
                 //TODO: ADD NAVIGATION
               },
-              child: const Text('I am finished'),
+              child: const Text('I am finished',
+              semanticsLabel: 'I am finished'
+              ),
             ),
             const SizedBox(height: 16),
             OutlinedButton(
@@ -63,7 +70,9 @@ class LoginPage extends StatelessWidget {
                  //TODO: ADD NAVIGATION
                  // go back to landing page
               }, 
-              child: const Text('Back'))
+              child: const Text('Back',
+              semanticsLabel: 'Back')
+              )
           ],
         ),
       ),

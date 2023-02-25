@@ -13,18 +13,21 @@ class ProfilePage extends StatelessWidget {
           children: <Widget>[
             const Text(
               'Fill in your information',
+              semanticsLabel: 'Fill in your information',
               style: TextStyle(fontSize: 30),
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 16),
             const Text(
               'First Name',
+              semanticsLabel: 'First Name',
               style: TextStyle(fontSize: 20),
             ),
             const SizedBox(height: 8),
             const TextField(
               decoration: InputDecoration(
                 hintText: 'Type first name here',
+                semanticCounterText: 'Type first name here',
                 border: OutlineInputBorder(
                   borderRadius: 
                   BorderRadius.all(Radius.circular(10.0) 
@@ -36,6 +39,7 @@ class ProfilePage extends StatelessWidget {
             const SizedBox(height:10),
             const Text(
               'Last Name',
+              semanticsLabel: 'Last Name',
               style: TextStyle(fontSize: 20),
             ),
             const SizedBox(height: 8),
@@ -43,6 +47,7 @@ class ProfilePage extends StatelessWidget {
               textAlign: TextAlign.center,
               decoration: InputDecoration(
                 hintText: 'Type last name here',
+                semanticCounterText: 'Type last name here',
                 border: OutlineInputBorder(
                   borderRadius: 
                   BorderRadius.all(Radius.circular(10.0) 
@@ -53,6 +58,7 @@ class ProfilePage extends StatelessWidget {
             const SizedBox(height:10),
             const Text(
               'Phone Number',
+              semanticsLabel: 'Phone Number',
               style: TextStyle(fontSize: 20),
             ),
             const SizedBox(height: 8),
@@ -60,6 +66,7 @@ class ProfilePage extends StatelessWidget {
               textAlign: TextAlign.center,
               decoration: InputDecoration(
                 hintText: 'Type phone number here',
+                semanticCounterText: 'Type phone number here',
                 border: OutlineInputBorder(
                   borderRadius: 
                   BorderRadius.all(Radius.circular(10.0) 
@@ -75,6 +82,7 @@ class ProfilePage extends StatelessWidget {
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 7),
           child: Text(
             'Add a photo of yourself',
+            semanticsLabel: 'Add a photo of yourself',
             style: TextStyle(fontSize: 20.0),
           ),
         ),
@@ -94,7 +102,9 @@ class ProfilePage extends StatelessWidget {
                 // Handle button press - takes to add_contacts_option
                 //TODO: ADD NAVIGATION
               },
-              child: const Text('I am finished'),
+              child: const Text('I am finished',
+              semanticsLabel: 'I am finished'
+              ),
             ),
             const SizedBox(height: 16),
             OutlinedButton(
@@ -102,7 +112,10 @@ class ProfilePage extends StatelessWidget {
                  //TODO: ADD NAVIGATION
                  // exits the application
               }, 
-              child: const Text('Quit'))
+              child: const Text('Quit',
+              semanticsLabel: 'Quit'
+              )
+              )
           ],
         ),
       ),

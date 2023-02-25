@@ -14,6 +14,7 @@ class AddContacts extends StatelessWidget {
               'Would you like to add contacts for message sending?',
               style: TextStyle(fontSize: 50),
               textAlign: TextAlign.center,
+              semanticsLabel: 'Would you like to add contacts for message sending?',
             ),
             const SizedBox(height: 16),
             SizedBox(
@@ -23,7 +24,9 @@ class AddContacts extends StatelessWidget {
                 //go to create contacts page
                 //TODO: ADD NAVIGATION
               },
-              child: const Text('Yes'),
+              child: const Text('Yes',
+              semanticsLabel: 'Yes'
+              ),
             )
             ),
             const SizedBox(height: 16),
@@ -34,7 +37,9 @@ class AddContacts extends StatelessWidget {
                 // go to main page
                  //TODO: ADD NAVIGATION
               }, 
-              child: const Text('No')
+              child: const Text('No',
+              semanticsLabel: 'No'
+              )
               )
             )
           ],

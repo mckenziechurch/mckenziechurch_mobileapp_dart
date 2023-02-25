@@ -14,18 +14,21 @@ class EmergencyContact extends StatelessWidget {
           children: <Widget>[
             const Text(
               'Fill in information for your emergency contact',
+              semanticsLabel: 'Fill in information for your emergency contact',
               style: TextStyle(fontSize: 30),
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 16),
             const Text(
               'Name',
+              semanticsLabel: 'Name',
               style: TextStyle(fontSize: 30),
             ),
             const SizedBox(height: 8),
             const TextField(
               decoration: InputDecoration(
                 hintText: 'Type their name here',
+                semanticCounterText: 'Type their name here',
                 border: OutlineInputBorder(
                   borderRadius: 
                   BorderRadius.all(Radius.circular(10.0) 
@@ -37,12 +40,14 @@ class EmergencyContact extends StatelessWidget {
             const SizedBox(height: 16),
             const Text(
               'Phone Number',
+              semanticsLabel: 'Phone Number',
               style: TextStyle(fontSize: 30),
             ),
             const SizedBox(height: 8),
             const TextField(
               decoration: InputDecoration(
                 hintText: 'Type their phone number here',
+                semanticCounterText: 'Type their phone number here',
                 border: OutlineInputBorder(
                   borderRadius: 
                   BorderRadius.all(Radius.circular(10.0) 
@@ -59,6 +64,7 @@ class EmergencyContact extends StatelessWidget {
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 7),
           child: Text(
             'Add a photo of your contact',
+            semanticsLabel: 'Add a photo of your contact',
             style: TextStyle(fontSize: 30.0),
           ),
         ),
@@ -83,7 +89,9 @@ class EmergencyContact extends StatelessWidget {
                     //TODO: clear the fields
                   },
                   child: 
-                    const Text("Remove contact")
+                    const Text("Remove contact",
+                    semanticsLabel: "Remove contact"
+                    )
                   )
                   ),
             ],
@@ -97,7 +105,9 @@ class EmergencyContact extends StatelessWidget {
                 // Handle button press - takes to add_contacts_option
                 //TODO: ADD NAVIGATION
               },
-              child: const Text('I am finished'),
+              child: const Text('I am finished',
+              semanticsLabel: 'I am finished'
+              ),
             )
             ),
             const SizedBox(height: 16),
@@ -107,7 +117,9 @@ class EmergencyContact extends StatelessWidget {
               onPressed: () {
                  //TODO: ADD NAVIGATION - go to profile_creation
               }, 
-              child: const Text('Back')
+              child: const Text('Back',
+              semanticsLabel: 'Back'
+              )
               )
             )
           ],
