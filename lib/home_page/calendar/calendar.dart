@@ -34,12 +34,12 @@ class _CalendarState extends State<Calendar> {
 
   List<Event> _getEventsForDay(DateTime day) {
     // Implementation example
-    return kEvents[day] ?? [];
+    return null ?? [];
   }
 
   List<Event> _getEventsForRange(DateTime start, DateTime end) {
     // Implementation example
-    final days = daysInRange(start, end);
+    final days = null;
 
     return [
       for (final d in days) ..._getEventsForDay(d),
@@ -86,8 +86,8 @@ class _CalendarState extends State<Calendar> {
       body: Column(
         children: [
           TableCalendar<Event>(
-            firstDay: kFirstDay,
-            lastDay: kLastDay,
+            firstDay: DateTime.now(),
+            lastDay: DateTime.now(),
             focusedDay: _focusedDay,
             selectedDayPredicate: (day) => isSameDay(_selectedDay, day),
             rangeStartDay: _rangeStart,
