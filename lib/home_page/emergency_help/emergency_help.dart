@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class EmergencyHelp extends StatelessWidget {
-  //TODO: access user object fields
+void makePhoneCall(String phoneNumber) async {
+  final url = 'tel:$phoneNumber';
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -15,7 +24,8 @@ class EmergencyHelp extends StatelessWidget {
               width: 500,
               child: ElevatedButton(
               onPressed: () {
-                //TODO: ADD NAVIGATION - call 911
+                //CALL 911
+                makePhoneCall('+911');
               },
               style: 
                 ElevatedButton.styleFrom(
@@ -40,7 +50,9 @@ class EmergencyHelp extends StatelessWidget {
               width: 500,
               child: ElevatedButton(
               onPressed: () {
-                //TODO: ADD NAVIGATION - calls the emergency contact's phone num
+                //CALLS the emergency contact's phone num
+                //TODO: access emergency contact phone num.
+                makePhoneCall('[emergencyContactPhoneNum]');
               },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -60,7 +72,8 @@ class EmergencyHelp extends StatelessWidget {
               width: 500,
             child: OutlinedButton(
               onPressed: () {
-                 //TODO: ADD NAVIGATION - home_page
+                 //go to home_page
+                 Navigator.pop(context);
               }, 
               child: const Text('Back')
               )

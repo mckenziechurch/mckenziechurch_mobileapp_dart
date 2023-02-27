@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import '../contacts/add_contacts_option.dart';
 
 class ProfilePage extends StatelessWidget {
   //TODO: create user object w/ fields firstName, lastName, profilePic?
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      routes: {
+        '/add_contacts_option':(context) => AddContacts()
+      },
       home: Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -99,8 +103,8 @@ class ProfilePage extends StatelessWidget {
             const SizedBox(height: 16),
             ElevatedButton(
               onPressed: () {
-                // Handle button press - takes to add_contacts_option
-                //TODO: ADD NAVIGATION
+                //go to add_contacts_option
+                 Navigator.pushReplacementNamed(context, '/add_contacts_option');
               },
               child: const Text('I am finished',
               semanticsLabel: 'I am finished'
@@ -109,8 +113,8 @@ class ProfilePage extends StatelessWidget {
             const SizedBox(height: 16),
             OutlinedButton(
               onPressed: () {
-                 //TODO: ADD NAVIGATION
                  // exits the application
+                 Navigator.pop(context);
               }, 
               child: const Text('Quit',
               semanticsLabel: 'Quit'

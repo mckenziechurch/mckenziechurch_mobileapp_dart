@@ -1,7 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class NonEmergencyHelp extends StatelessWidget {
-  //TODO: access user object fields
+  //TODO: access user object fields for name
+  //TODO: add confirmation message for each button (ie, medicine message sent)
+void sendTextMessage(String phoneNumber, String message) async {
+  final url = 'sms:$phoneNumber?body=$message';
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -15,7 +26,8 @@ class NonEmergencyHelp extends StatelessWidget {
               width: 500,
               child: ElevatedButton(
               onPressed: () {
-                //TODO: ADD NAVIGATION - send feed message
+                //send feed message to facility number
+                sendTextMessage('[facilityPhoneNumber]', '[userName] needs help eating.');
               },
               child: 
               Row(
@@ -36,7 +48,8 @@ class NonEmergencyHelp extends StatelessWidget {
               width: 500,
               child: ElevatedButton(
               onPressed: () {
-                //TODO: ADD NAVIGATION - send medicine help message
+                //send medicine help message to facility number
+                sendTextMessage('[facilityPhoneNumber]', '[userName] needs help with medicine.');
               },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -56,7 +69,8 @@ class NonEmergencyHelp extends StatelessWidget {
               width: 500,
               child: ElevatedButton(
               onPressed: () {
-                //TODO: ADD NAVIGATION - send bathroom help message
+                //send bathroom help message to facility number
+                sendTextMessage('[facilityPhoneNumber]', '[userName] needs help going to the restroom.');
               },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -76,7 +90,8 @@ class NonEmergencyHelp extends StatelessWidget {
               width: 500,
             child: OutlinedButton(
               onPressed: () {
-                 //TODO: ADD NAVIGATION - home_page
+                 //go to home_page
+                 Navigator.pop(context);
               }, 
               child: const Text('Back', 
               semanticsLabel: 'Back'

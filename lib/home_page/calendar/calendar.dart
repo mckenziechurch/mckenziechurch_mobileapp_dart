@@ -2,6 +2,7 @@
 import 'dart:html';
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
+import '../home_page.dart';
 
 class Calendar extends StatefulWidget {
   @override
@@ -82,6 +83,9 @@ class _CalendarState extends State<Calendar> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      routes: {
+        '/home_page':(context) => HomePage()
+      },
       home: Scaffold(
       body: Column(
         children: [
@@ -139,6 +143,19 @@ class _CalendarState extends State<Calendar> {
               },
             ),
           ),
+          const SizedBox(height: 16),
+            SizedBox(
+              width: 500,
+            child: OutlinedButton(
+              onPressed: () {
+                 //go to home_page
+                 Navigator.pushReplacementNamed(context, '/home_page');
+              }, 
+              child: const Text('Back',
+              semanticsLabel: 'Back'
+              )
+              )
+            )
         ],
       ),
     )

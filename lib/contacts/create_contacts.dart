@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import '../home_page/home_page.dart';
 
 class CreateContacts extends StatelessWidget {
-  //TODO: create contact object w/ fields firstName, lastName, profilePic?
+  //TODO: create contact OBJECT w/ fields firstName, lastName, profilePic, phone num?
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      routes: {
+        '/home_page': (context) => HomePage()
+      },
       home: Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -86,6 +90,7 @@ class CreateContacts extends StatelessWidget {
                   onPressed: () {
                     //TODO: add more contact fields
                   },
+                  // ignore: sort_child_properties_last
                   child: 
                     const Text("Add another contact",
                     semanticsLabel: 'Add another contact'
@@ -117,7 +122,7 @@ class CreateContacts extends StatelessWidget {
             child: ElevatedButton(
               onPressed: () {
                 // Handle button press - takes to home_page
-                //TODO: ADD NAVIGATION
+                Navigator.pushReplacementNamed(context, '/home_page');
               },
               child: const Text('I am finished',
               semanticsLabel: 'I am finished'
@@ -129,7 +134,9 @@ class CreateContacts extends StatelessWidget {
               width: 500,
             child: OutlinedButton(
               onPressed: () {
-                 //TODO: ADD NAVIGATION - go to add_contacts_option
+                 //go to add_contacts_option
+                 // pop - go to last item in the stack (data structure)
+                 Navigator.pop(context);
               }, 
               child: const Text('Back',
               semanticsLabel: 'Back'

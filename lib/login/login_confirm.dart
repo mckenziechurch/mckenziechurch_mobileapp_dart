@@ -43,8 +43,8 @@ class ConfirmLogin extends StatelessWidget {
             const SizedBox(height: 16),
             ElevatedButton(
               onPressed: () {
-                // Handle button press - takes to add_contacts_option
-                //TODO: ADD NAVIGATION
+                // go to home page
+                 Navigator.pushReplacementNamed(context, '/home_page');
               },
               child: const Text('Yes',
               semanticsLabel: 'Yes'
@@ -53,8 +53,8 @@ class ConfirmLogin extends StatelessWidget {
             const SizedBox(height: 16),
             OutlinedButton(
               onPressed: () {
-                 //TODO: ADD NAVIGATION
-                 // exits the application
+                 //go back
+                 Navigator.pop(context);
               }, 
               child: const Text('No',
               semanticsLabel: 'No'

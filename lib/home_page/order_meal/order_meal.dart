@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:mckenziechurch_project1/home_page/order_meal/meal_confirmation.dart';
+import '../home_page.dart';
 
 class OrderMeal extends StatelessWidget {
   //TODO: access user object fields
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      routes: {
+        '/home_page':(context) => HomePage(),
+        '/meal_confirmation':(context) => MealConfirmation()
+      },
       home: Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -148,7 +154,8 @@ class OrderMeal extends StatelessWidget {
               width: 500,
               child: ElevatedButton(
               onPressed: () {
-                //TODO: ADD NAVIGATION - meal_confirmation
+                //go to meal_confirmation
+                Navigator.pushReplacementNamed(context, '/meal_confirmation');
               }, child: 
               const Text('Finish ordering',
               semanticsLabel: 'Finish ordering'),
@@ -159,7 +166,8 @@ class OrderMeal extends StatelessWidget {
               width: 500,
             child: OutlinedButton(
               onPressed: () {
-                 //TODO: ADD NAVIGATION - home_page
+                 //go to home_page
+                 Navigator.pushReplacementNamed(context, '/home_page');
               }, 
               child: const Text('Back', 
               semanticsLabel: 'Back'

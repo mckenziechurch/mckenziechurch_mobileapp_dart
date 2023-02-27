@@ -1,10 +1,37 @@
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:mckenziechurch_project1/home_page/near_me-map/near_me.dart';
+import '../home_page/emergency_help/emergency_help.dart';
+import '../home_page/non_emergency/non-emergency_help.dart';
+import '../home_page/order_meal/order_meal.dart';
+import '../home_page/send_message/send_message.dart';
+import '../home_page/calendar/calendar.dart';
+import '../home_page/take_photo/take_photo.dart';
+import '../home_page/settings/settings.dart';
+import '../landing_screen/landing_screen.dart';
 
-class ConfirmLogin extends StatelessWidget {
+class HomePage extends StatelessWidget {
   //TODO: access user object fields
+Future<void> pickImageFromGallery() async {
+  final picker = ImagePicker();
+  final pickedFile = await picker.pickImage(source: ImageSource.gallery);
+  // Do something with the picked file (e.g. display it in an image widget)
+}
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      routes: {
+        '/emergency_help':(context) => EmergencyHelp(),
+        '/non-emergency_help':(context) => NonEmergencyHelp(),
+        '/order_meal':(context) => OrderMeal(),
+        '/send_message':(context) => ContactsDropDown(),
+        '/calendar':(context) => Calendar(),
+        '/take_photo':(context) => TakePhoto(),
+        '/near_me':(context) => NearMeMap(),
+        '/settings':(context) => SettingsPage(),
+        '/landing_screen':(context) => LandingPage()
+      },
       home: Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -21,7 +48,8 @@ class ConfirmLogin extends StatelessWidget {
               width: 500,
               child: ElevatedButton(
               onPressed: () {
-                //TODO: ADD NAVIGATION - call 911/emergency contact (option)
+                //go to emergency_help
+                Navigator.pushReplacementNamed(context, '/emergency_help');
               },
               style: 
                 ElevatedButton.styleFrom(
@@ -46,7 +74,8 @@ class ConfirmLogin extends StatelessWidget {
               width: 500,
               child: ElevatedButton(
               onPressed: () {
-                //TODO: ADD NAVIGATION - non-emergency_help_page
+                //go to non-emergency_help_page
+                Navigator.pushReplacementNamed(context, '/non-emergency_help');
               },
               style: 
                 ElevatedButton.styleFrom(
@@ -70,7 +99,8 @@ class ConfirmLogin extends StatelessWidget {
               width: 500,
               child: ElevatedButton(
               onPressed: () {
-                //TODO: ADD NAVIGATION - order_meal
+                //go to order_meal
+                Navigator.pushReplacementNamed(context, '/order_meal');
               },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -90,7 +120,8 @@ class ConfirmLogin extends StatelessWidget {
               width: 500,
               child: ElevatedButton(
               onPressed: () {
-                //TODO: ADD NAVIGATION - send_message
+                //go to send_message
+                Navigator.pushReplacementNamed(context, '/send_message');
               },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -110,7 +141,8 @@ class ConfirmLogin extends StatelessWidget {
               width: 500,
               child: ElevatedButton(
               onPressed: () {
-                //TODO: ADD NAVIGATION - calendar
+                //go to calendar
+                Navigator.pushReplacementNamed(context, '/calendar');
               },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -130,7 +162,8 @@ class ConfirmLogin extends StatelessWidget {
               width: 500,
               child: ElevatedButton(
               onPressed: () {
-                //TODO: ADD NAVIGATION - take_photo
+                //go to take_photo
+                Navigator.pushReplacementNamed(context, '/take_photo');
               },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -150,7 +183,8 @@ class ConfirmLogin extends StatelessWidget {
               width: 500,
               child: ElevatedButton(
               onPressed: () {
-                //TODO: ADD NAVIGATION - gallery
+                //go to gallery
+                pickImageFromGallery();
               },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -170,7 +204,8 @@ class ConfirmLogin extends StatelessWidget {
               width: 500,
               child: ElevatedButton(
               onPressed: () {
-                //TODO: ADD NAVIGATION - map
+                //go to map
+                Navigator.pushReplacementNamed(context, '/near_me');
               },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -190,7 +225,8 @@ class ConfirmLogin extends StatelessWidget {
               width: 500,
               child: ElevatedButton(
               onPressed: () {
-                //TODO: ADD NAVIGATION - phone_settings
+                //go to phone_settings
+                 Navigator.pushReplacementNamed(context, '/settings');
               },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -211,6 +247,7 @@ class ConfirmLogin extends StatelessWidget {
             child: OutlinedButton(
               onPressed: () {
                  //TODO: ADD NAVIGATION - popup ("would you like to exit the app?")
+                  Navigator.pushReplacementNamed(context, '/landing_screen');
               }, 
               child: const Text('Quit',
               semanticsLabel: 'Quit'

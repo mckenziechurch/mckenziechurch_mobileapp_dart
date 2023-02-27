@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../home_page.dart';
+import '../send_message/message_confirm.dart';
 
 class ContactsDropDown extends StatefulWidget {
   @override
@@ -28,6 +30,10 @@ class SendMessage extends State<ContactsDropDown> {
  @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      routes: {
+        '/home_page':(context) => HomePage(),
+        '/message_confirmation':(context) => MessageConfirmation()
+      },
       home: Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -48,12 +54,11 @@ class SendMessage extends State<ContactsDropDown> {
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 16),
-            //TODO: add dropdown button for contacts - attempted, but could not figure out
             SizedBox(
               width: 500,
               child: ElevatedButton(
               onPressed: () {
-                //TODO: ADD NAVIGATION - send text to contact
+                //TODO: add dropdown button for contacts - attempted, but could not figure out
               }, child: 
               const Text('[contactName]',
               semanticsLabel: '[contactName]'),
@@ -78,10 +83,11 @@ class SendMessage extends State<ContactsDropDown> {
               width: 500,
               child: ElevatedButton(
               onPressed: () {
-                //TODO: ADD NAVIGATION - confirm page
+                //go to confirm page
+                Navigator.pushReplacementNamed(context, '/message_confirmation');
               }, child: 
-              const Text('Send message',
-              semanticsLabel: 'Send message'),
+              const Text('Finished typing message',
+              semanticsLabel: 'Finished typing message'),
             ),
             ),
             const SizedBox(height: 16),
@@ -89,7 +95,8 @@ class SendMessage extends State<ContactsDropDown> {
               width: 500,
             child: OutlinedButton(
               onPressed: () {
-                 //TODO: ADD NAVIGATION - home_page
+                 //go to home_page
+                 Navigator.pushReplacementNamed(context, '/home_page');
               }, 
               child: const Text('Back', 
               semanticsLabel: 'Back'

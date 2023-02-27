@@ -55,7 +55,8 @@ class _PhotoPageState extends State<PhotoPage> {
               width: 500,
             child: OutlinedButton(
               onPressed: () {
-                 //TODO: ADD NAVIGATION - home_page
+                 //go to home_page
+                 Navigator.pop(context);
               }, 
               child: const Text('Back', 
               semanticsLabel: 'Back'

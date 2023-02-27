@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
+import '../login/login_confirm.dart';
+import '../landing_screen/landing_screen.dart';
 
 class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      routes: {
+        '/login_confirm':(context) => ConfirmLogin(),
+        '/landing_screen':(context) => LandingPage()
+      },
       home: Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -58,7 +64,7 @@ class LoginPage extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 // go to login confirmation page
-                //TODO: ADD NAVIGATION
+                 Navigator.pushReplacementNamed(context, '/login_confirm');
               },
               child: const Text('I am finished',
               semanticsLabel: 'I am finished'
@@ -67,8 +73,8 @@ class LoginPage extends StatelessWidget {
             const SizedBox(height: 16),
             OutlinedButton(
               onPressed: () {
-                 //TODO: ADD NAVIGATION
                  // go back to landing page
+                  Navigator.pushReplacementNamed(context, '/landing_screen');
               }, 
               child: const Text('Back',
               semanticsLabel: 'Back')

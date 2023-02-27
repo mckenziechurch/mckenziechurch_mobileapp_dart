@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import './add_contacts_option.dart';
+import '../profile_creation/profile_creation.dart';
 
 class EmergencyContact extends StatelessWidget {
-  //TODO: create emergencyContact object w/ fields firstName, lastName, profilePic?
-  //TODO: emergency contact tracks location?
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      routes: {
+        '/add_contacts_option':(context) => AddContacts(),
+        '/profile_creation':(context) => ProfilePage()
+      },
       home: Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -103,7 +107,7 @@ class EmergencyContact extends StatelessWidget {
             child: ElevatedButton(
               onPressed: () {
                 // Handle button press - takes to add_contacts_option
-                //TODO: ADD NAVIGATION
+                Navigator.pushReplacementNamed(context, '/add_contacts_option');
               },
               child: const Text('I am finished',
               semanticsLabel: 'I am finished'
@@ -115,7 +119,8 @@ class EmergencyContact extends StatelessWidget {
               width: 500,
             child: OutlinedButton(
               onPressed: () {
-                 //TODO: ADD NAVIGATION - go to profile_creation
+                 //go to profile_creation
+                 Navigator.pushReplacementNamed(context, '/profile_creation');
               }, 
               child: const Text('Back',
               semanticsLabel: 'Back'

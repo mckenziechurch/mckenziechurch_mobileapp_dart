@@ -8,7 +8,6 @@ class SettingsPage extends StatelessWidget {
     return MaterialApp(
       home:
       Scaffold( 
-        
       body: ListView(
         children: <Widget>[
           const Text(
@@ -21,6 +20,17 @@ class SettingsPage extends StatelessWidget {
           _buildSettingOption(context, 'Battery', Icons.battery_full),
           _buildSettingOption(context, 'Volume', Icons.volume_up),
           _buildSettingOption(context, 'Power Button', Icons.power_settings_new),
+          const SizedBox(height: 16),
+            SizedBox(
+              width: 500,
+            child: OutlinedButton(
+              onPressed: () {
+                 //go to home_page
+                 Navigator.pop(context);
+              }, 
+              child: const Text('Back')
+              )
+            )
         ],
       ),
     )

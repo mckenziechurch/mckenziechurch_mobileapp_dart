@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:mckenziechurch_project1/profile_creation/profile_creation.dart';
+import '../login/login_page.dart';
 
 class LandingPage extends StatelessWidget {
   //TODO: create contact object w/ fields firstName, lastName, profilePic?
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      routes: {
+        '/login_page':(context) => LoginPage(),
+        '/profile_creation':(context) => ProfilePage()
+      },
       home: Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -37,8 +43,8 @@ class LandingPage extends StatelessWidget {
               width: 700,
             child: ElevatedButton(
               onPressed: () {
-                // Handle button press - takes to login_page
-                //TODO: ADD NAVIGATION
+                // go to login_page
+                 Navigator.pushReplacementNamed(context, '/login_page');
               },
               child: const Text('I already have an account',
               semanticsLabel: 'I already have an account'
@@ -50,8 +56,8 @@ class LandingPage extends StatelessWidget {
               width: 700,
             child: ElevatedButton(
               onPressed: () {
-                // Handle button press - takes to profile_creation
-                //TODO: ADD NAVIGATION
+                // go to profile_creation
+                 Navigator.pushReplacementNamed(context, '/profile_creation');
               },
               child: const Text('Create an account',
               semanticsLabel: 'Create an account'
@@ -64,6 +70,7 @@ class LandingPage extends StatelessWidget {
             child: OutlinedButton(
               onPressed: () {
                  //TODO: ADD NAVIGATION - exits the app
+                 Navigator.pop(context);
               }, 
               child: const Text('Quit',
               semanticsLabel: 'Quit'
