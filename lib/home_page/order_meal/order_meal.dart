@@ -61,6 +61,16 @@ class OrderMeal extends StatelessWidget {
               width: 500,
               child: ElevatedButton(
                 onPressed: () {
+                  //TODO: ADD NAVIGATION - add to food list object/increment icon - STATEFUL?
+                },
+                child: const Text('All Combos', semanticsLabel: 'All Combos'),
+              ),
+            ),
+            const SizedBox(height: 16),
+            SizedBox(
+              width: 500,
+              child: ElevatedButton(
+                onPressed: () {
                   //go to meal_confirmation
                   Navigator.pushNamed(context, '/meal_confirmation');
                 },

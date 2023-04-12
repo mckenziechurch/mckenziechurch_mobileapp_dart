@@ -16,8 +16,8 @@ class UserRepo {
 
         return userList;
       }
-    } catch (e) {
-      throw Exception("$e");
+    } catch (error) {
+      print(error);
     }
     return [];
   }
