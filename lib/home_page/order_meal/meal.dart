@@ -19,4 +19,6 @@ class Meal {
       throw const FormatException('Meal JSON invalid.');
     }
   }
+
+  Map<String, dynamic> toJSON() => {'items': items, 'type': type, 'id': id};
 }
