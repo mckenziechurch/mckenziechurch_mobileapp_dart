@@ -53,9 +53,14 @@ class MealRepo {
     return "Error occurred.";
   }
 
-  // Future<Meal> addMeal(Meal meal) async {
-  //   List<String> items = ["apple", "pear", "toast", "water"];
-  //   Meal newMeal = Meal(items, "Breakfast", 1);
+  Future<Meal> orderMeal(Meal meal) async {
+    var url = Uri.parse("http://localhost:8080/api/v1/requests/meal/add");
+    final response = await http.post(url,
+        headers: <String, String>{
+          'Content-Type': 'application/json; charset=UTF-8',
+        },
+        body: jsonEncode(meal.toJSON()));
 
-  // }
+    return Meal.fromJSON(jsonDecode(response.body));
+  }
 }
