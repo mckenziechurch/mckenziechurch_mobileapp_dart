@@ -33,8 +33,7 @@ class OrderMeal extends StatelessWidget {
                 onPressed: () {
                   //TODO: ADD NAVIGATION - add to food list object/increment icon - STATEFUL?
                 },
-                child: const Text('[BREAKFAST item 1]',
-                    semanticsLabel: '[BREAKFAST item 1]'),
+                child: const Text('Combo 1', semanticsLabel: 'Combo 1'),
               ),
             ),
             const SizedBox(height: 16),
@@ -44,8 +43,7 @@ class OrderMeal extends StatelessWidget {
                 onPressed: () {
                   //TODO: ADD NAVIGATION - add to food list object/increment icon - STATEFUL?
                 },
-                child: const Text('[BREAKFAST item 1]',
-                    semanticsLabel: '[BREAKFAST item 1]'),
+                child: const Text('Combo 2', semanticsLabel: 'Combo 2'),
               ),
             ),
             const SizedBox(height: 16),
@@ -55,8 +53,7 @@ class OrderMeal extends StatelessWidget {
                 onPressed: () {
                   //TODO: ADD NAVIGATION - add to food list object/increment icon - STATEFUL?
                 },
-                child: const Text('[BREAKFAST item 1]',
-                    semanticsLabel: '[BREAKFAST item 1]'),
+                child: const Text('Combo 3', semanticsLabel: 'Combo 3'),
               ),
             ),
             const SizedBox(height: 16),
