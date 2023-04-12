@@ -48,9 +48,8 @@ class LoginPage extends StatelessWidget {
             const SizedBox(height: 16),
             ElevatedButton(
               onPressed: () {
-                // go to login confirmation page
                 Navigator.of(context, rootNavigator: true)
-                    .pushNamed('/login_confirm');
+                    .pushNamed('/confirm_login');
               },
               child:
                   const Text('I am finished', semanticsLabel: 'I am finished'),

@@ -85,42 +85,6 @@ class HomePage extends StatelessWidget {
                 width: 500,
                 child: ElevatedButton(
                     onPressed: () {
-                      //go to send_message
-                      Navigator.pushNamed(context, '/send_message');
-                    },
-                    child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: const <Widget>[
-                          Icon(
-                            Icons.markunread,
-                            size: 50,
-                            semanticLabel: 'Send a message',
-                          ),
-                          Text('Send a message')
-                        ]))),
-            const SizedBox(height: 16),
-            SizedBox(
-                width: 500,
-                child: ElevatedButton(
-                    onPressed: () {
-                      //go to gallery
-                      pickImageFromGallery();
-                    },
-                    child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: const <Widget>[
-                          Icon(
-                            Icons.insert_photo,
-                            size: 50,
-                            semanticLabel: 'View photo gallery',
-                          ),
-                          Text('View photo gallery')
-                        ]))),
-            const SizedBox(height: 16),
-            SizedBox(
-                width: 500,
-                child: ElevatedButton(
-                    onPressed: () {
                       //go to phone_settings
                       Navigator.pushNamed(context, '/settings');
                     },
@@ -139,7 +103,6 @@ class HomePage extends StatelessWidget {
                 width: 500,
                 child: OutlinedButton(
                     onPressed: () {
-                      //TODO: ADD NAVIGATION - popup ("would you like to exit the app?")
                       Navigator.pushNamed(context, '/landing_screen');
                     },
                     child: const Text('Quit', semanticsLabel: 'Quit')))
