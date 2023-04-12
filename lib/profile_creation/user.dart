@@ -6,6 +6,7 @@ class User {
   int phone_number = 0;
   int id = 0;
   //List<Request> = [];
+  User();
 
   User.fromJSON(Map<String, dynamic> json) {
     try {
