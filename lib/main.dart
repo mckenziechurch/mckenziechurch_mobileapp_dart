@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mckenziechurch_project1/home_page/emergency_help/emergency_help.dart';
 import 'package:mckenziechurch_project1/home_page/home_page.dart';
 import 'package:mckenziechurch_project1/home_page/non_emergency/non-emergency_help.dart';
+import 'package:mckenziechurch_project1/home_page/order_meal/breakfast_screen.dart';
 import 'package:mckenziechurch_project1/home_page/order_meal/meal_confirmation.dart';
 import 'package:mckenziechurch_project1/home_page/order_meal/order_meal.dart';
 import 'package:mckenziechurch_project1/home_page/settings/settings.dart';
@@ -31,7 +32,8 @@ class Personoo extends StatelessWidget {
       '/home': (context) => HomePage(),
       '/landing': (context) => LandingPage(),
       '/confirm_login': (context) => ConfirmLogin(),
-      '/create_profile': (context) => ProfilePage()
+      '/create_profile': (context) => ProfilePage(),
+      '/breakfast_screen': (context) => BreakfastScreen()
     });
   }
 }

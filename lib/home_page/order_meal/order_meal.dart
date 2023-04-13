@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'breakfast_screen.dart';
 
 class OrderMeal extends StatelessWidget {
   //TODO: access user object fields
@@ -61,7 +62,7 @@ class OrderMeal extends StatelessWidget {
               width: 500,
               child: ElevatedButton(
                 onPressed: () {
-                  //TODO: ADD NAVIGATION - add to food list object/increment icon - STATEFUL?
+                  Navigator.pushNamed(context, '/breakfast_screen');
                 },
                 child: const Text('All Combos', semanticsLabel: 'All Combos'),
               ),
