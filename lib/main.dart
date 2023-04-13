@@ -33,7 +33,7 @@ class Personoo extends StatelessWidget {
       '/landing': (context) => LandingPage(),
       '/confirm_login': (context) => ConfirmLogin(),
       '/create_profile': (context) => ProfilePage(),
-      '/breakfast_screen': (context) => BreakfastScreen()
+      '/breakfast_screen': (context) => BreakfastScreen(),
     });
   }
 }

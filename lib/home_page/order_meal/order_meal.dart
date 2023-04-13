@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'breakfast_screen.dart';
+import '../order_meal/combo_screen.dart';
 
 class OrderMeal extends StatelessWidget {
-  //TODO: access user object fields
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,9 +16,9 @@ class OrderMeal extends StatelessWidget {
                   Icon(
                     Icons.shopping_basket_rounded,
                     size: 30,
-                    semanticLabel: 'Order a meal',
+                    semanticLabel: 'Select a meal to order',
                   ),
-                  Text('Order a meal', style: TextStyle(fontSize: 30))
+                  Text('Select a meal to order', style: TextStyle(fontSize: 30))
                 ]),
             const SizedBox(height: 16),
             const Text(
@@ -32,7 +31,12 @@ class OrderMeal extends StatelessWidget {
               width: 500,
               child: ElevatedButton(
                 onPressed: () {
-                  //TODO: ADD NAVIGATION - add to food list object/increment icon - STATEFUL?
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const MealDetailScreen(id: 1),
+                    ),
+                  );
                 },
                 child: const Text('Combo 1', semanticsLabel: 'Combo 1'),
               ),
@@ -42,7 +46,10 @@ class OrderMeal extends StatelessWidget {
               width: 500,
               child: ElevatedButton(
                 onPressed: () {
-                  //TODO: ADD NAVIGATION - add to food list object/increment icon - STATEFUL?
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const MealDetailScreen(id: 2)));
                 },
                 child: const Text('Combo 2', semanticsLabel: 'Combo 2'),
               ),
@@ -52,7 +59,10 @@ class OrderMeal extends StatelessWidget {
               width: 500,
               child: ElevatedButton(
                 onPressed: () {
-                  //TODO: ADD NAVIGATION - add to food list object/increment icon - STATEFUL?
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const MealDetailScreen(id: 3)));
                 },
                 child: const Text('Combo 3', semanticsLabel: 'Combo 3'),
               ),
@@ -67,12 +77,11 @@ class OrderMeal extends StatelessWidget {
                 child: const Text('All Combos', semanticsLabel: 'All Combos'),
               ),
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 22),
             SizedBox(
               width: 500,
               child: ElevatedButton(
                 onPressed: () {
-                  //go to meal_confirmation
                   Navigator.pushNamed(context, '/meal_confirmation');
                 },
                 child: const Text('Finish ordering',

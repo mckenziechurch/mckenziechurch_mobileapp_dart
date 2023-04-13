@@ -45,12 +45,20 @@ class _BreakfastTable extends StatelessWidget {
           return const Center(child: Text('Error while fetching data'));
         } else {
           final mealList = snapshot.data ?? [];
-          return Scrollbar(
-            child: DataTable(
-              columns: _createBreakfastColumns(),
-              rows: _createBreakfastRows(mealList, context),
-            ),
-          );
+          return Column(children: [
+            Scrollbar(
+              child: DataTable(
+                columns: _createBreakfastColumns(),
+                rows: _createBreakfastRows(mealList, context),
+              ),
+              // OutlinedButton(
+              //         onPressed: () {
+              //           //go to home_page
+              //           Navigator.pop(context);
+              //         },
+              //         child: const Text('Back', semanticsLabel: 'Back'))
+            )
+          ]);
         }
       },
     );
