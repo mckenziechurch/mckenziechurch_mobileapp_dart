@@ -13,17 +13,17 @@ class User {
       print('json -> $json');
 
       id = json['id'];
-      first_name = json['firstName'];
-      last_name = json['lastName'];
-      phone_number = json['phoneNumber'];
+      first_name = json['first_name'];
+      last_name = json['last_name'];
+      phone_number = json['phone_number'];
     } catch (e) {
       throw const FormatException('User info incorrect.');
     }
   }
 
   Map<String, dynamic> toJSON() => {
-        'firstName': first_name,
-        'lastName': last_name,
-        'phoneNumber': phone_number
+        'first_name': first_name,
+        'last_name': last_name,
+        'phone_number': phone_number
       };
 }
