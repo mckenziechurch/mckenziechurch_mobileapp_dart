@@ -15,5 +15,12 @@ void main() {
       expect(user.phone_number, 2222222222);
       expect(user.id, 1);
     });
+
+    test("User info missing first_name", () {
+      expect(
+          () => User.fromJSON(
+              {"last_name": "Jones", "phone_number": 0000000000, "id": 2}),
+          throwsA(isA<FormatException>()));
+    });
   });
 }
