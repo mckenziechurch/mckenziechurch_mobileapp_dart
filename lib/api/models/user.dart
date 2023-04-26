@@ -21,10 +21,16 @@ class User {
     }
   }
 
-  Map<String, dynamic> toJSON() => {
+  Map<String, dynamic> toJSON() {
+    try {
+      return {
         'first_name': first_name,
         'last_name': last_name,
         'phone_number': phone_number,
         'id': id
       };
+    } catch (e) {
+      throw const FormatException('User info incorrect.');
+    }
+  }
 }

@@ -47,5 +47,14 @@ void main() {
       expect(json['phone_number'], 9999999999);
       expect(json['id'], 6);
     });
+
+    // test("Invalid User object to JSON", () {
+    //   User user = User();
+    //   user.first_name = "First";
+    //   user.last_name = "Last";
+    //   user.id = 9;
+    //   user.phone_number = int.parse("phone num.");
+    //   expect(() => user.toJSON(), throwsA(isA<FormatException>()));
+    // });
   });
 }
