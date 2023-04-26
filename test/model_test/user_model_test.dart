@@ -22,5 +22,16 @@ void main() {
               {"last_name": "Jones", "phone_number": 0000000000, "id": 2}),
           throwsA(isA<FormatException>()));
     });
+
+    test("User phone_number == null", () {
+      expect(
+          () => User.fromJSON({
+                "first_name": "First",
+                "last_name": "Last",
+                "phone_number": null,
+                "id": 4
+              }),
+          throwsA(isA<FormatException>()));
+    });
   });
 }
