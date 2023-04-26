@@ -33,5 +33,19 @@ void main() {
               }),
           throwsA(isA<FormatException>()));
     });
+
+    test("Generate valid JSON given User object", () {
+      User user = User();
+      user.first_name = "Jane";
+      user.last_name = "Doe";
+      user.phone_number = 9999999999;
+      user.id = 6;
+
+      Map<String, dynamic> json = user.toJSON();
+      expect(json['first_name'], "Jane");
+      expect(json['last_name'], "Doe");
+      expect(json['phone_number'], 9999999999);
+      expect(json['id'], 6);
+    });
   });
 }
