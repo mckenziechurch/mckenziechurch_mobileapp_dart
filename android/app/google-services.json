@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "431081463760",
+    "project_id": "personoo",
+    "storage_bucket": "personoo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:431081463760:android:d00cedb29c3989707e63d5",
+        "android_client_info": {
+          "package_name": "com.example.mckenziechurch_project1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "431081463760-2ks51bg6rmmc8s5k9f2qjh4dpeg2eho8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyKK5q5mnd-J-n-2iBOLvHTQ1-GLPgi10"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "431081463760-2ks51bg6rmmc8s5k9f2qjh4dpeg2eho8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
