@@ -18,7 +18,7 @@ class HomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'Good [daytime], [name]!',
+              'Hey there!',
               style: TextStyle(fontSize: 30),
               textAlign: TextAlign.center,
             ),

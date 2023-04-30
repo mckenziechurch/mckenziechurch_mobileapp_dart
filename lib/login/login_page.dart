@@ -1,6 +1,46 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:mckenziechurch_project1/login/login_confirm.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
+  const LoginPage({Key? key}) : super(key: key);
+
+  @override
+  _LoginPageState createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  final _formKey = GlobalKey<FormState>();
+  late String _email;
+  late String _password;
+
+  void _submit() async {
+    if (_formKey.currentState!.validate()) {
+      _formKey.currentState!.save();
+
+      try {
+        await FirebaseAuth.instance.signInWithEmailAndPassword(
+          email: _email,
+          password: _password,
+        );
+        // Navigate to the home screen after successful login.
+        Navigator.pushNamed(context, '/confirm_login');
+      } on FirebaseAuthException catch (e) {
+        if (e.code == 'user-not-found') {
+          // Show an error message if user is not found.
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('User not found.')),
+          );
+        } else if (e.code == 'wrong-password') {
+          // Show an error message if password is incorrect.
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('Wrong password.')),
+          );
+        }
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,8 +88,9 @@ class LoginPage extends StatelessWidget {
             const SizedBox(height: 16),
             ElevatedButton(
               onPressed: () {
-                Navigator.of(context, rootNavigator: true)
-                    .pushNamed('/confirm_login');
+                _submit();
+                // Navigator.of(context, rootNavigator: true)
+                //     .pushNamed('/confirm_login');
               },
               child:
                   const Text('I am finished', semanticsLabel: 'I am finished'),

@@ -35,22 +35,21 @@ class LandingPage extends StatelessWidget {
                 child: ElevatedButton(
                   onPressed: () {
                     // go to login_page
-                    Navigator.pushNamed(context, '/login_page');
+                    Navigator.pushNamed(context, '/firebase_login');
                   },
-                  child: const Text('I already have an account',
-                      semanticsLabel: 'I already have an account'),
+                  child: const Text('Login', semanticsLabel: 'Login'),
                 )),
             const SizedBox(height: 16),
-            SizedBox(
-                width: 700,
-                child: ElevatedButton(
-                  onPressed: () {
-                    // go to profile_creation
-                    Navigator.pushNamed(context, '/profile_creation');
-                  },
-                  child: const Text('Create an account',
-                      semanticsLabel: 'Create an account'),
-                )),
+            // SizedBox(
+            //     width: 700,
+            //     child: ElevatedButton(
+            //       onPressed: () {
+            //         // go to profile_creation
+            //         Navigator.pushNamed(context, '/profile_creation');
+            //       },
+            //       child: const Text('Create an account',
+            //           semanticsLabel: 'Create an account'),
+            //     )),
             const SizedBox(height: 16),
             SizedBox(
                 width: 500,

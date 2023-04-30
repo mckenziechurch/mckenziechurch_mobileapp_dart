@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mckenziechurch_project1/firebase_options.dart';
 import 'package:mckenziechurch_project1/home_page/emergency_help/emergency_help.dart';
 import 'package:mckenziechurch_project1/home_page/home_page.dart';
 import 'package:mckenziechurch_project1/home_page/non_emergency/non-emergency_help.dart';
@@ -6,12 +7,16 @@ import 'package:mckenziechurch_project1/home_page/order_meal/breakfast_screen.da
 import 'package:mckenziechurch_project1/home_page/order_meal/meal_confirmation.dart';
 import 'package:mckenziechurch_project1/home_page/order_meal/order_meal.dart';
 import 'package:mckenziechurch_project1/home_page/settings/settings.dart';
+import 'package:mckenziechurch_project1/login/firebase_login.dart';
 import 'package:mckenziechurch_project1/login/login_confirm.dart';
 import 'package:mckenziechurch_project1/login/login_page.dart';
 import 'package:mckenziechurch_project1/profile_creation/profile_creation.dart';
 import 'landing_screen/landing_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const Personoo());
 }
 
@@ -34,6 +39,7 @@ class Personoo extends StatelessWidget {
       '/confirm_login': (context) => ConfirmLogin(),
       '/create_profile': (context) => ProfilePage(),
       '/breakfast_screen': (context) => BreakfastScreen(),
+      '/firebase_login': (context) => AuthGate()
     });
   }
 }
