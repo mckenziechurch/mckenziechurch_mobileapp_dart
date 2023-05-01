@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:mckenziechurch_project1/take_photo/take_photo.dart';
 
 class HomePage extends StatelessWidget {
-  //TODO: access user object fields
   Future<void> pickImageFromGallery() async {
     final picker = ImagePicker();
     final pickedFile = await picker.pickImage(source: ImageSource.gallery);
@@ -79,6 +79,42 @@ class HomePage extends StatelessWidget {
                             semanticLabel: 'Request a meal',
                           ),
                           Text('Request a meal')
+                        ]))),
+            const SizedBox(height: 16),
+            SizedBox(
+                width: 500,
+                child: ElevatedButton(
+                    onPressed: () {
+                      //go to map
+                      Navigator.pushReplacementNamed(context, '/map');
+                    },
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const <Widget>[
+                          Icon(
+                            Icons.map_rounded,
+                            size: 50,
+                            semanticLabel: 'Map',
+                          ),
+                          Text('Map')
+                        ]))),
+            const SizedBox(height: 16),
+            SizedBox(
+                width: 500,
+                child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.pushReplacementNamed(
+                          context, TakePhoto() as String);
+                    },
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const <Widget>[
+                          Icon(
+                            Icons.camera_alt_rounded,
+                            size: 50,
+                            semanticLabel: 'Take a Photo',
+                          ),
+                          Text('Take a Photo')
                         ]))),
             const SizedBox(height: 16),
             SizedBox(
